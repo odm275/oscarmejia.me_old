@@ -1,0 +1,13 @@
+{
+  "name": "oscarmejia.me",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "gatsby": "^2.17.8",
+    "gatsby-theme-blog": "^1.1.14",
+    "lodash.merge": "^4.6.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
+  }
+}

@@ -21,11 +21,29 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/content/assets`
+      }
+    },
+    {
+      resolve: 'gatsby-source-graphql',
+      options: {
+        typeName: 'WPGraphQL',
+        fieldName: 'wpgraphql',
+        url: 'http://portfolio.local/graphql',
+        refetchInterval: 60
+      }
+    },
+    {
       resolve: `gatsby-theme-blog`,
       options: {
         // basePath defaults to `/`
         basePath: `/blog`
       }
-    }
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`
   ]
 }

@@ -1,7 +1,8 @@
 import React from 'react'
 import Layout from 'gatsby-theme-blog/src/components/layout'
-import Footer from 'gatsby-theme-blog/src/components/home-footer'
 import Projects from '../components/projects'
+import Footer from '../components/footer';
+import HowCanIHelp from '../components/how-can-help';
 import { useStaticQuery, graphql } from 'gatsby'
 
 function Home({ children, ...props }) {
@@ -39,9 +40,12 @@ function Home({ children, ...props }) {
 
   return (
     <Layout {...props}>
-      <h1>Projects</h1>
-      <Projects projects={projects.wpgraphql.posts.edges} />
-      {children}
+      <main>
+        <HowCanIHelp/>      
+        <h1>Projects</h1>
+        <Projects projects={projects.wpgraphql.posts.edges} />
+      </main>
+      <Footer />
     </Layout>
   )
 }

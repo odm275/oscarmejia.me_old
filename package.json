@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "deepmerge": "^4.2.2",
     "gatsby": "^2.17.8",
     "gatsby-image": "^2.2.30",
     "gatsby-plugin-sharp": "^2.2.36",
@@ -11,8 +12,9 @@
     "gatsby-source-graphql": "^2.1.21",
     "gatsby-theme-blog": "^1.1.14",
     "gatsby-transformer-sharp": "^2.3.2",
-    "lodash.merge": "^4.6.2",
     "react": "^16.11.0",
-    "react-dom": "^16.11.0"
+    "react-dom": "^16.11.0",
+    "typeface-roboto": "^0.0.75",
+    "typography-theme-lincoln": "^0.16.19"
   }
 }

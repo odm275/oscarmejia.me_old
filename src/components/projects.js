@@ -1,31 +1,15 @@
 import React from 'react'
-import Img from 'gatsby-image'
+import { Styled, css, Flex } from 'theme-ui'
+import ProjectCard from './project-card'
 
-function Projects(props) {
-  console.log(props.projects)
+function Projects({ projects }) {
+  debugger;
   return (
-    <div style={{ display: 'flex' }}>
-      {props.projects.map((project, i) => (
-        <ul key={`${project.node.title}-i`}>
-          <li>{project.node.projectFields.company}</li>
-          <li
-            dangerouslySetInnerHTML={{
-              __html: project.node.projectFields.description
-            }}
-          />
-          <li>{project.node.projectFields.gitLink}</li>
-          <li>{project.node.projectFields.link}</li>
-          {(
-            <Img
-              fixed={
-                project.node.projectFields.mainPhoto.imageFile.childImageSharp
-                  .fixed
-              }
-            />
-          ) || null}
-        </ul>
+    <Flex sx={{ justifyContent: 'space-between' }}>
+      {projects.map((project, i) => (
+        <ProjectCard project={project} />
       ))}
-    </div>
+    </Flex>
   )
 }
 

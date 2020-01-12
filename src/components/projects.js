@@ -1,16 +1,15 @@
-import React from 'react'
-import { Styled, css, Flex } from 'theme-ui'
-import ProjectCard from './project-card'
+import React from "react";
+import { Styled, css, Flex } from "theme-ui";
+import ProjectCard from "./project-card";
 
 function Projects({ projects }) {
-  debugger;
   return (
-    <Flex sx={{ justifyContent: 'space-between' }}>
+    <Flex sx={{ justifyContent: "space-between" }}>
       {projects.map((project, i) => (
         <ProjectCard project={project} />
       ))}
     </Flex>
-  )
+  );
 }
 
-export default Projects
+export default Projects;

@@ -13,69 +13,86 @@ const feedbackMachine = Machine({
   states: {
     opened: {
       on: {
-        CLOSED: "closed"
-      }
+        CLOSED: "closed",
+      },
     },
     closed: {
       on: {
-        OPEN: "opened"
-      }
-    }
-  }
+        OPEN: "opened",
+      },
+    },
+  },
 });
 
-function FeelingCard({ emotion, emoji, selected }) {
-  return (
-    <div
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        flexDirection: "column",
-        flex: "1 0 calc(100%/3)",
-        backgroundColor: `${selected ? "noticeMe" : "pastyWhite"}`,
-        color: "black"
-      }}
-    >
-      <div>{emoji}</div>
-      <div>{emotion}</div>
-    </div>
-  );
+function FeelingCard({ emoji, selected, uniqueStyles }) {
+  // const styles = {
+  //   display: "flex",
+  //   alignItems: "center",
+  //   flexDirection: "column",
+  //   flex: "1 0 auto",
+  //   backgroundColor: `${selected ? "noticeMe" : "primary"}`,
+  //   fontSize: "35px",
+  //   borderRadius: "10px",
+  // };
+  // const allStyles = { ...styles, ...uniqueStyles };
+  return <Button variant="secondary">{emoji}</Button>;
 }
 
 function FeedbackWidget() {
   const [current, send] = useMachine(feedbackMachine);
 
   function handleOpen() {
-    send("OPEN");
+    send("OPENED");
   }
   function handleClose() {
-    console.log("handle close");
-    send("CLOSE");
+    send("CLOSED");
   }
 
   console.log("current value", current.value);
   return (
     <Container
       sx={{
-        maxWidth: "30vw",
+        maxWidth: "300px",
         position: "absolute",
         top: "50vh",
         right: 0,
-        backgroundColor: "noticeMe"
+        backgroundColor: "background",
+        borderStyle: "solid",
+        borderColor: "noticeMe",
+        borderRadius: "10px",
+        padding: "10px",
       }}
     >
       <h3>Hi, how are you doing today?</h3>
-      <Flex sx={{ justifyContent: "space-between" }}>
-        <FeelingCard emotion="poor" emoji=":(" />
-        <FeelingCard emotion="fine" emoji=":\" />
-        <FeelingCard emotion="great" emoji=":)" />
+      <Flex sx={{ justifyContent: "space-between", marginBottom: "10px" }}>
+        <FeelingCard emoji="🙂" />
+        <FeelingCard
+          emoji="🥳"
+          uniqueStyles={{ marginLeft: "15px", marginRight: "15px" }}
+        />
+        <FeelingCard emoji="😎" />
       </Flex>
-      <Button
-        onClick={handleClose}
-        sx={{ color: "black", alignItems: "flex-end" }}
-      >
-        Close
-      </Button>
+      <Flex sx={{ justifyContent: "flex-start" }}>
+        <Button
+          onClick={handleClose}
+          sx={{
+            alignItems: "flex-start",
+          }}
+          style={{
+            marginRight: "10px",
+          }}
+        >
+          Close
+        </Button>
+        <Button
+          onClick={handleClose}
+          sx={{
+            alignItems: "flex-start",
+          }}
+        >
+          Submit
+        </Button>
+      </Flex>
     </Container>
   );
 }

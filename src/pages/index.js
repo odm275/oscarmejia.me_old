@@ -4,7 +4,6 @@ import Projects from "../components/projects";
 import Footer from "../components/footer";
 import HowCanIHelp from "../components/how-can-help";
 import { useStaticQuery, graphql } from "gatsby";
-import FeedbackWidget from "../components/feedback-widget";
 
 function Home({ children, ...props }) {
   const projects = useStaticQuery(graphql`
@@ -42,7 +41,6 @@ function Home({ children, ...props }) {
   return (
     <Layout {...props}>
       <main>
-        <FeedbackWidget />
         <HowCanIHelp />
         <h1>Projects</h1>
         <Projects projects={projects.wpgraphql.posts.edges} />

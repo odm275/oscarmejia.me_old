@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
   "dependencies": {
     "@theme-ui/components": "^0.2.50",
     "@xstate/react": "^0.8.1",
@@ -16,6 +24,7 @@
     "gatsby-transformer-sharp": "^2.3.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "styled-components": "^5.0.1",
     "typeface-roboto": "^0.0.75",
     "typography-theme-lincoln": "^0.16.19",
     "xstate": "^4.7.6"

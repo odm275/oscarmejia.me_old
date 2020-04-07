@@ -2,7 +2,7 @@ import React from "react";
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 
-function RainbowButton() {
+function RainbowButton({ onClick }) {
   return (
     <a
       sx={{
@@ -13,6 +13,7 @@ function RainbowButton() {
         display: "inline-block",
         borderRadius: "7px",
       }}
+      onClick={onClick}
     >
       <span
         sx={{

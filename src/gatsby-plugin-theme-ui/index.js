@@ -16,7 +16,7 @@ const myOverrides = {
   colors,
   buttons: {
     primary: {
-      color: "background",
+      color: "noticeMe",
       bg: "primary",
       "&:hover": {
         bg: "text",

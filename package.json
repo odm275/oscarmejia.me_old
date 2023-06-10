@@ -15,7 +15,7 @@
     "@theme-ui/components": "^0.2.50",
     "@xstate/react": "^0.8.1",
     "deepmerge": "^4.2.2",
-    "gatsby": "^2.17.8",
+    "gatsby": "^4.25.7",
     "gatsby-image": "^2.2.30",
     "gatsby-plugin-sharp": "^2.2.36",
     "gatsby-source-filesystem": "^2.1.35",
